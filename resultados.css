@@ -1,0 +1,85 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body y Container */
+body {
+    font-family: "Euclid Circular A", "Poppins", sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 26px;
+    color: #0072ff;
+    margin-bottom: 15px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info, .sintomas, .prediccion {
+    width: 48%;
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#enfermedad-prediccion {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff6347;
+    text-align: center;
+}
+
+/* Estilo de las pantallas de error */
+#error {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}

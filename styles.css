@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff6347, #ff4500, #ff1493, #8a2be2); /* Fondo llamativo con gradiente */
+    background-size: 400% 400%; /* Hace que el gradiente se expanda más */
+    animation: gradientAnimation 10s ease infinite; /* Animación suave para el fondo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.inicio-container {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards; /* Animación de la interfaz */
+    color: white; /* Aseguramos que el texto sea visible sobre el fondo */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Estilo y animación del logo */
+.logo-superior {
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    animation: logoAnimation 2s ease-out forwards; /* Animación del logo */
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #ff6347; /* Color llamativo */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover del botón */
+button:hover {
+    background-color: #ff4500; /* Cambia el color cuando se pasa el mouse */
+    transform: scale(1.1); /* Hace que el botón crezca un poco */
+}
+
+/* Animación de la interfaz */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación del logo */
+@keyframes logoAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(360deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}

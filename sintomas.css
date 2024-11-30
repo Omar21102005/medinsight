@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    font-family: "Euclid Circular A", "Poppins";
+    animation: fadeIn 3s ease-out;
+}
+
+/* Animación de fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fondo con degradado animado */
+@keyframes gradientAnimation {
+    0% {
+        background: #65c8ff;
+    }
+    50% {
+        background: #43a1d3;
+    }
+    100% {
+        background: #226ce7;
+    }
+}
+
+body {
+    background: linear-gradient(45deg, #65c8ff, #43a1d3, #226ce7);
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* Contenedor principal con flexbox */
+.sintomas-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Animación de deslizamiento de la tarjeta */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sintomas-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del logo grande y de fondo */
+.logo-superior {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    animation: logoZoomIn 3s ease-out;
+    opacity: 0.8;
+}
+
+/* Animación para el logo: zoom de entrada */
+@keyframes logoZoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.sintomas-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.sintomas-grid label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+}
+
+.sintomas-grid input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #226ce7;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto de hover para los labels */
+.sintomas-grid label:hover {
+    transform: translateX(5px);
+    color: #226ce7;
+}
+
+/* Efecto de hover para los checkboxes */
+.sintomas-grid input[type="checkbox"]:hover {
+    transform: scale(1.3);
+}
+
+.boton-enviar {
+    width: 100%;
+    height: 56px;
+    background: #226ce7;
+    color: #ffffff;
+    font-weight: 500;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de hover para el botón */
+.boton-enviar:hover {
+    background: #1d5bbf;
+    transform: translateY(-2px);
+}
+
+.boton-enviar:focus {
+    outline: none;
+}

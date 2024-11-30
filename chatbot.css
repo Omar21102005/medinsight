@@ -1,0 +1,209 @@
+/* Estilo general del chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.chatbot-bubble {
+    background-color: #ffffff; /* Burbuja blanca */
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot-bubble:hover {
+    transform: scale(1.1); /* Efecto de aumento cuando se pasa el ratón */
+    background-color: #f0f0f0; /* Cambio de color al pasar el ratón */
+}
+
+.chatbot-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Animación de entrada de la burbuja */
+@keyframes bubbleBounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.chatbot-bubble {
+    animation: bubbleBounce 0.8s ease-in-out;
+}
+
+/* Ventana del Chatbot */
+.chatbot-window {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    width: 350px;
+    max-height: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.chatbot-window.show {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Estilo del encabezado del chatbot */
+.chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#close-chatbot {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+#close-chatbot:hover {
+    color: #ff5c8d; /* Color rosa para el botón de cerrar */
+}
+
+/* Estilo de los mensajes del chatbot */
+.chatbot-message {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.chatbot-message.bot {
+    background-color: #f1f1f1;
+    color: #333;
+    max-width: 80%;
+    animation: fadeIn 0.5s ease;
+}
+
+.chatbot-message.user {
+    background-color: #ff5c8d; /* Rosa para el usuario */
+    color: white;
+    max-width: 80%;
+    margin-left: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estilo de los botones de opciones */
+.chat-option {
+    background-color: #007bff; /* Azul vibrante */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-option:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilo de la burbuja de bienvenida */
+.chatbot-message.welcome {
+    background-color: #ffebcd; /* Color suave para la bienvenida */
+    color: #333;
+    font-style: italic;
+}
+
+/* Estilo del contenedor de los mensajes */
+.chatbot-messages {
+    max-height: 380px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+/* Animación para los botones de opciones */
+@keyframes showOptions {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-option {
+    animation: showOptions 0.5s ease;
+}
+
+/* Animación del chatbot abriéndose */
+@keyframes chatWindowOpen {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chatbot-window {
+    animation: chatWindowOpen 0.6s ease-in-out;
+}

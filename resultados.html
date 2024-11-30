@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Consulta</title>
+    <link rel="stylesheet" href="resultados.css">
+    <link rel="stylesheet" href="chatbot.css"> <!-- Archivo CSS para el chatbot -->
+    <script src="resultados.js" defer></script>
+    <script src="chatbot.js" defer></script> <!-- Archivo JS para el chatbot -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resultados de la Consulta</h1>
+        </div>
+        <div class="content">
+            <div class="info">
+                <h2>Información del Paciente</h2>
+                <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+                <p><strong>Apellidos:</strong> <span id="apellidos"></span></p>
+                <p><strong>DNI:</strong> <span id="dni"></span></p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="fecha-nacimiento"></span></p>
+            </div>
+            <div class="sintomas">
+                <h2>Síntomas Seleccionados</h2>
+                <ul id="sintomas-list">
+                    <!-- Los síntomas se cargarán aquí -->
+                </ul>
+            </div>
+            <div class="prediccion">
+                <h2>Posibles Enfermedades</h2>
+                <p id="enfermedad-prediccion">Calculando...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Burbuja del Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-bubble">
+            <img src="imagenes/LOGO IA.png" alt="Logo Chatbot" class="chatbot-logo">
+        </div>
+    </div>
+
+    <!-- Ventana del Chatbot -->
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="close-chatbot">X</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <!-- Los mensajes del chatbot aparecerán aquí -->
+        </div>
+    </div>
+
+</body>
+</html>
